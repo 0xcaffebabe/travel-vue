@@ -5,7 +5,7 @@
             猜你喜欢
         </div>
         <ul>
-            <li class="item" v-for="item in recommendList" :key="item.id">
+            <li class="item" v-for="item in list" :key="item.id">
 
                 <img class="item-img"
                      :src="item.imgUrl"
@@ -27,42 +27,10 @@
 
 <script>
     export default {
-        name: 'HomeRecommend',
-        data () {
-            return {
-                recommendList: [
-                    {
-                        id: '1',
-                        imgUrl: 'http://img1.qunarzz.com/sight/p0/1801/5d/5d24bb249f8ca889a3.water.jpg_200x200_77551cb9.jpg',
-                        title: '澳门水舞间演出',
-                        desc: '9607条评论',
-                        location: '澳门'
-                    },
-                    {
-                        id: '2',
-                        imgUrl: 'http://img1.qunarzz.com/sight/p0/1501/18/181cff1e8af11041.water.jpg_200x200_2e185c41.jpg',
-                        title: '维多利亚海港',
-                        desc: '667条评论',
-                        location: '油尖旺'
-                    },
-                    {
-                        id: '3',
-                        imgUrl: 'http://img1.qunarzz.com/sight/p0/1801/5d/5d24bb249f8ca889a3.water.jpg_200x200_77551cb9.jpg',
-                        title: '澳门水舞间演出',
-                        desc: '9607条评论',
-                        location: '澳门'
-                    },
-                    {
-                        id: '4',
-                        imgUrl: 'http://img1.qunarzz.com/sight/p0/1501/18/181cff1e8af11041.water.jpg_200x200_2e185c41.jpg',
-                        title: '维多利亚海港',
-                        desc: '667条评论',
-                        location: '油尖旺'
-                    }
-
-                ]
-            }
-        }
+        props: {
+            list: Array
+        },
+        name: 'HomeRecommend'
     }
 </script>
 

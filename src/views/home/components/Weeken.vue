@@ -4,7 +4,7 @@
             周末去哪儿
         </div>
         <ul>
-            <li class="item" v-for="item in recommendList" :key="item.id">
+            <li class="item" v-for="item in list" :key="item.id">
                 <div class="item-img-wrapper">
                     <img class="item-img"
                          :src="item.imgUrl"
@@ -27,36 +27,8 @@
 <script>
     export default {
         name: 'HomeWeekend',
-        data () {
-            return {
-                recommendList: [
-                    {
-                        id: '1',
-                        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/ed/bf2bc72af591d5.jpg_r_640x214_f9f1bfcc.jpg',
-                        title: '温泉必游',
-                        desc: '为你量身打造绿色健康生活方式，远离都市的喧嚣，工作的烦恼。'
-                    },
-                    {
-                        id: '2',
-                        imgUrl: 'http://img1.qunarzz.com/sight/source/1812/ce/44203f8332865.jpg_r_640x214_ec49a2ca.jpg',
-                        title: '苏州泡汤圣地',
-                        desc: '解压之地，放松自己，来一段轻松的旅程。'
-                    },
-                    {
-                        id: '3',
-                        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/ed/bf2bc72af591d5.jpg_r_640x214_f9f1bfcc.jpg',
-                        title: '温泉必游',
-                        desc: '为你量身打造绿色健康生活方式，远离都市的喧嚣，工作的烦恼。'
-                    },
-                    {
-                        id: '4',
-                        imgUrl: 'http://img1.qunarzz.com/sight/source/1812/ce/44203f8332865.jpg_r_640x214_ec49a2ca.jpg',
-                        title: '苏州泡汤圣地',
-                        desc: '解压之地，放松自己，来一段轻松的旅程。'
-                    }
-
-                ]
-            }
+        props: {
+            list: Array
         }
     }
 </script>
