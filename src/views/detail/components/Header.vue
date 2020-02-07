@@ -71,6 +71,7 @@
         height: .86rem
         line-height: .86rem
         left 0
+        z-index 10
         font-size .32rem
         color #fff
         background-color $bgc
