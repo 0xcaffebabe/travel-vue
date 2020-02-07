@@ -61,16 +61,19 @@
             overflow hidden
             float left
             width: 25%
+
             padding-bottom 25%
 
             .icon-img
                 position absolute
                 top .1rem
-                left 0
+                left 50%
+                transform translateX(-50%)
                 bottom .44rem
 
                 img
-                    height: 100%
+                    height: 60%
+
                 p
                     padding-top .1rem
 </style>
