@@ -1,17 +1,21 @@
 <template>
     <div>
-        <banner/>
+        <detail-banner/>
+        <detail-header/>
+        <div class="content"></div>
     </div>
 </template>
 
 <script>
-    import Banner from "./components/Banner";
+    import DetailBanner from "./components/Banner";
+    import DetailHeader from "./components/Header";
     export default {
         name: 'Detail',
-        components: {Banner}
+        components: {DetailHeader, DetailBanner}
     }
 </script>
 
 <style lang="stylus" scoped>
-
+    .content
+        height: 50rem
 </style>
