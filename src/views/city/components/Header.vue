@@ -2,11 +2,9 @@
 
     <div class="header">
 
-
-                <router-link to="/" class="iconfont" style="color: white">
-                &#xe676;
-                </router-link>
-
+        <router-link to="/" class="iconfont" style="color: white">
+            &#xe676;
+        </router-link>
 
         城市选择
     </div>
@@ -28,8 +26,9 @@
         text-align center
         color #fff
         background-color: $bgc
+
         .header-back
-           flex 0.5
+            flex 0.5
             width: .64rem
             font-size .4rem
             text-align center
