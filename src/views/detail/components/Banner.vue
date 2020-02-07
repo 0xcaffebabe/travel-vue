@@ -2,17 +2,17 @@
     <div>
         <div class="banner" @click="handleBannerClick">
             <img class="banner-img"
-                 src="http://img1.qunarzz.com/sight/p0/1801/5d/5d24bb249f8ca889a3.water.jpg_600x330_378727c0.jpg"
+                 :src="bannerImg"
                  alt="">
             <div class="banner-info">
-                <div class="banner-title">澳门水舞间演出</div>
+                <div class="banner-title">{{sightName}}</div>
                 <div class="banner-number">
                     <span class="iconfont">&#xe662;</span>
-                    45
+                    {{gallaryImgs.length}}
                 </div>
             </div>
         </div>
-        <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"/>
+        <common-gallary :imgs="gallaryImgs" v-show="showGallary" @close="handleGallaryClose"/>
     </div>
 </template>
 
@@ -21,12 +21,15 @@
 
     export default {
         name: 'Banner',
+        props: {
+            sightName: String,
+            bannerImg: String,
+            gallaryImgs: Array
+        },
         data() {
-          return {
-              imgs: ["http://img1.qunarzz.com/sight/p0/1905/f7/f78db6b93d44170aa3.img.jpg_r_800x800_e4ae696b.jpg"
-              ,"http://img1.qunarzz.com/sight/p0/1905/f7/f78db6b93d44170aa3.img.jpg_r_800x800_e4ae696b.jpg"],
-              showGallary:false
-          }
+            return {
+                showGallary: false
+            }
         },
         methods: {
             handleBannerClick() {
