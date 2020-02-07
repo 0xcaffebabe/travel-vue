@@ -8,109 +8,31 @@
                     <div class="button-wrapper">
                         <div class="button">漳州</div>
                     </div>
-                    <div class="button-wrapper">
-                        <div class="button">漳州</div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">漳州</div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">漳州</div>
-                    </div>
                 </div>
+
             </div>
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper">
-                        <div class="button">漳州</div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">漳州</div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">漳州</div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">漳州</div>
+                    <div class="button-list">
+                        <div class="button-wrapper" v-for="item in hot" :key="item.id">
+                            <div class="button">{{item.name}}</div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
+            <div class="area" v-for="(item,key) in cities" :key="key">
+                <div class="title border-topbottom">{{key}}</div>
                 <div class="item-list">
-                    <div class="item border-bottom">
-                        阿拉尔
+                    <div class="item border-bottom" v-for="innerItem in item" :key="innerItem.id">
+                        {{innerItem.name}}
                     </div>
-                    <div class="item border-bottom">
-                        阿拉善
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔巴
-                    </div>
+
 
                 </div>
             </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉善
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔巴
-                    </div>
 
-                </div>
-            </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉善
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔巴
-                    </div>
-
-                </div>
-            </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉善
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔巴
-                    </div>
-
-                </div>
-            </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉善
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔巴
-                    </div>
-
-                </div>
-            </div>
         </div>
     </div>
 </template>
@@ -120,6 +42,10 @@
 
     export default {
         name: 'CityList',
+        props: {
+            cities: Object,
+            hot: Array
+        },
         mounted() {
             this.scroll = new BScroll(this.$refs.wrapper)
 
